@@ -1,0 +1,18 @@
+{
+	"name": "limbo-plugin-openai",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "vite build --watch",
+		"build": "vite build"
+	},
+	"dependencies": {
+		"limbo": "file:~/coding/node/oss/limbo-api",
+		"vite-plugin-limbo": "file:~/coding/node/oss/vite-plugin-limbo"
+	},
+	"devDependencies": {
+		"prettier": "^3.5.3",
+		"typescript": "^5.8.3",
+		"vite": "^6.2.5"
+	}
+}

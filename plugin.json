@@ -1,0 +1,15 @@
+{
+	"$schema": "./node_modules/limbo/schemas/plugin.json",
+	"id": "mcp",
+	"name": "MCP",
+	"version": "0.0.1",
+	"minApiVersion": "0.0.1",
+	"description": "Adds support for the Model Context Protocol (MCP)",
+	"author": {
+		"name": "Wes Lowe",
+		"email": "wesley.jlowe10@gmail.com"
+	},
+	"files": {
+		"js": "./dist/plugin.js"
+	}
+}
