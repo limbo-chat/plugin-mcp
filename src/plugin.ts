@@ -1,13 +1,5 @@
-import * as limbo from "limbo";
+import * as limbo from "@limbo/api";
 
-export function activate() {
-	limbo.hooks.onBeforeGenerateText(({ promptBuilder }) => {
-		promptBuilder.addTool({
-			id: "generate-image",
-			description: "generate an image",
-			execute: () => {
-				console.log("generating an image");
-			},
-		});
-	});
-}
+export default {
+	onActivate: async () => {},
+} satisfies limbo.Plugin;
