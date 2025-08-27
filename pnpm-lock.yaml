@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@better-mcp/client':
+        specifier: file:../../better-mcp-client
+        version: file:../../better-mcp-client
       '@limbo/api':
         specifier: file:../limbo-api
         version: file:../limbo-api
@@ -35,6 +38,9 @@ importers:
         version: 5.8.3
 
 packages:
+
+  '@better-mcp/client@file:../../better-mcp-client':
+    resolution: {directory: ../../better-mcp-client, type: directory}
 
   '@esbuild/aix-ppc64@0.25.3':
     resolution: {integrity: sha512-W8bFfPA8DowP8l//sxjJLSLkD8iEjMc7cBVyP+u4cEv9sM7mdUCkgsj+t0n/BWPFtv7WWCN5Yzj0N6FJNUUqBQ==}
@@ -433,6 +439,8 @@ packages:
     engines: {node: '>=18.12.0'}
 
 snapshots:
+
+  '@better-mcp/client@file:../../better-mcp-client': {}
 
   '@esbuild/aix-ppc64@0.25.3':
     optional: true
