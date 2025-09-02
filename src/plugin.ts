@@ -1,11 +1,6 @@
-import * as limbo from "@limbo/api";
-import {
-	Client,
-	Session,
-	HttpTransport,
-	FetchAdapter,
-	type Tool as MCPTool,
-} from "@better-mcp/client";
+import * as limbo from "@limbo-chat/api";
+import { Client, Session, type Tool as MCPTool } from "better-mcp-client";
+import { HttpTransport, FetchAdapter } from "better-mcp-client/http";
 
 function getMCPServerUrls() {
 	const urls = limbo.settings.get<string>("mcp_servers");
@@ -42,9 +37,10 @@ function convertMcpToolToLimbo(session: Session, mcpTool: MCPTool): limbo.Tool {
 				arguments: toolCall.arguments,
 			});
 
-			// that really should be the server's responsibility IMO
-			// todo, maybe validate output schema if available
+			// todo, maybe validate output schema if available and needed by the protocol
 			// todo, convert the response to text
+
+			console.log(result.content);
 
 			return "";
 		},
@@ -65,6 +61,7 @@ async function registerToolsFromMcpServer(mcpServerUrl: string) {
 	// await session.sendInitializedNotification();
 
 	const listToolsResult = await session.listTools();
+
 	const mcpTools = listToolsResult.tools;
 
 	for (const mcpTool of mcpTools) {
@@ -83,13 +80,12 @@ export default {
 		limbo.settings.register({
 			id: "mcp_servers",
 			type: "text",
+			variant: "multiline",
 			label: "MCP Servers",
 			description: "List one MCP server URL per line",
 		});
 
 		const mcpServerUrls = getMCPServerUrls();
-
-		console.log(mcpServerUrls);
 
 		await Promise.allSettled(
 			mcpServerUrls.map((mcpServerUrl) => registerToolsFromMcpServer(mcpServerUrl))
