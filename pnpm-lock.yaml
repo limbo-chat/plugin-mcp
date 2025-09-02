@@ -31,8 +31,8 @@ importers:
         specifier: ^6.2.1
         version: 6.2.1(esbuild@0.25.3)(rollup@4.40.1)
       rollup-plugin-limbo:
-        specifier: ^0.0.1
-        version: 0.0.1(rollup@4.40.1)
+        specifier: ^0.0.2
+        version: 0.0.2(rollup@4.40.1)
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
@@ -434,8 +434,8 @@ packages:
       esbuild: '>=0.18.0'
       rollup: ^1.20.0 || ^2.0.0 || ^3.0.0 || ^4.0.0
 
-  rollup-plugin-limbo@0.0.1:
-    resolution: {integrity: sha512-soQXo4IPj/9pP38CVV5FslLBHR5iTUBvO69Pv2CI1gyYgtXgjlXdPmSpAAcufym8S7/Va8yU5NIRIYSQM5nkYA==}
+  rollup-plugin-limbo@0.0.2:
+    resolution: {integrity: sha512-iP65sRmRWX/WlpckSKCoB0QhH0sTgH4bztlOEFAlXjyNpszYRifiJhiEZFLFKSBK9CoVXC9cvgCsDDYbnXCoSA==}
     peerDependencies:
       rollup: ^4.40.1
 
@@ -751,7 +751,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  rollup-plugin-limbo@0.0.1(rollup@4.40.1):
+  rollup-plugin-limbo@0.0.2(rollup@4.40.1):
     dependencies:
       rollup: 4.40.1
 
